@@ -1,0 +1,18 @@
+[ 2016-07-19T14:32:30+08:00 ] ::1 /SmileTP/City.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005924s ]
+ERR: 无法加载模块:City
+
+[ 2016-07-19T14:48:25+08:00 ] ::1 /SmileTP/index/city.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001411s ]
+ERR: 无法加载模块:Index
+
+[ 2016-07-19T14:48:37+08:00 ] ::1 /SmileTP/Index.php/city.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002067s ]
+ERR: 无法加载模块:City
+

@@ -1,0 +1,840 @@
+//color
+$brand-green : #39bf9e; //绿
+$btn-red : #FF4344; //红
+$btn-gray : #D8D8D8; //按钮灰
+$txt-black : #23282E; //文字黑
+$txt-gray : #8B8F92; //文字灰
+
+//border
+$border : solid 1px #d8d8d8;
+@mixin border-t{
+  border-top: $border;
+}
+@mixin border-b{
+  border-bottom: $border;
+}
+@mixin border-tb{
+  border-bottom: $border;
+  border-top: $border;
+}
+
+//reset
+body{
+  background-color:#F4F5F7;
+}
+a{
+  color: $txt-black;
+}
+ul,li,h2,h3,h4,h5{
+  margin: 0;
+  padding: 0;
+}
+.txt-green{
+  color: $brand-green;
+}
+.txt-red{
+  color: $btn-red;
+}
+.txt-black{
+  color: $txt-black;
+}
+.txt-gray{
+  color: $txt-gray;
+}
+.tip-logo{
+  width: 150px;
+}
+.tip-txt{
+  font-size: 12px;
+  color: $txt-gray;
+}
+@mixin bg-cover{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+    //字体垂直居中
+@mixin tx-center{
+  -webkit-box-align:center;
+  display: -webkit-box;
+}
+    //文字截断
+@mixin  txt-overflow{
+  white-space: nowrap ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+  //block
+@mixin wx-block{
+  @include border-tb;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+//btn
+.wx-btn{
+  width: 240px;
+  height: 40px;
+  margin: 8px 0;
+  font-size: 14px;
+  color: #fff;
+
+  &:hover,
+  &:active{
+    color: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  &.wx-btn-green{
+    background-color: $brand-green;
+    &:hover,
+    &:active{
+      background-color: darken($brand-green,5%);
+    }
+  }
+  &.wx-btn-red{
+    background-color: $btn-red;
+    &:hover,
+    &:active{
+      background-color: darken($btn-red,5%);
+    }
+  }
+  &.wx-btn-gray{
+    background-color: $btn-gray;
+    &:hover,
+    &:active{
+      background-color: darken($btn-gray,5%);
+    }
+  }
+}
+.wx-ghost-btn{
+  display: block;
+  width: 80px;
+  height: 32px;
+  font-size: 12px;
+  line-height: 32px;
+  text-align: center;
+  &.ghost-btn-green{
+    color: $brand-green;
+    border: solid 1px $brand-green;
+  }
+  &.ghost-btn-red{
+    color: $btn-red;
+    border: solid 1px $btn-red;
+  }
+  &.ghost-btn-gray{
+    color: $txt-gray;
+    border: solid 1px $txt-gray;
+  }
+}
+//header
+$rainbow : ('#FF4D4D','#FFBF11','#FF9311','#38DA9C','#08ACEB','#946BF3');
+$header-pt : 40px;
+@for $i from 0 to length($rainbow) {
+  .rainbow-block-#{$i+1} {
+    background-color: unquote(nth($rainbow, $i+1));
+  }
+}
+.rainbow-box{
+  position:fixed;
+  top:0;
+  height: 5px;
+  >div{
+    height: inherit;
+  }
+  z-index: 999;
+}
+
+.wx-header{
+  width: 100%;
+  background-color: #FFF;
+  height: 35px;
+  text-align: center;
+  position: fixed;
+  top: 5px;
+  border-bottom: $border;
+  z-index: 999;
+
+  a{
+    color: $txt-gray;
+    font-size: 14px;
+    line-height: 35px;
+  }
+
+  .wx-header-nav{
+    position: absolute;
+    top: 0;
+
+    &.wx-header-left{
+      left: 15px;
+      img{
+        height: 10px;
+      }
+      .icon-arrow{
+        transform: rotate(90deg);
+        margin-left: 5px;
+      }
+      .icon-back{
+        height: 12px;
+        margin-top: -3px;
+        margin-right: 2px;
+      }
+    }
+
+    &.wx-header-right{
+      right: 15px;
+      a{
+        line-height: 32px;
+      }
+      img{
+        height: 20px;
+      }
+    }
+  }
+
+  .wx-header-logo{
+    margin: 0;
+    line-height: 34px;
+    >img{
+      margin-top: -4px;
+      height: 35px;
+      font-size: 100%;
+    }
+  }
+}
+
+//footer navbar
+.wx-nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+  border-top: $border;
+  text-align: center;
+  color: $txt-gray;
+  font-size: 12px;
+
+  .wx-nav-icon{
+    display: block;
+    margin: 4px auto 0;
+    width: 24px;
+    height: 24px;
+    background-image: url("/dist/img/sprite-footer.png");
+    background-repeat: no-repeat;
+    background-size: 42px;
+    background-position-y: 4px;
+
+    &.icon-book{
+      background-position-x: 3px;
+    }
+    &.icon-man{
+      background-position-x: -24px;
+    }
+  }
+
+  .wx-nav-block:hover,
+  .wx-nav-block:active {
+    color: $brand-green;
+    .wx-nav-icon{
+      background-position-y: -20px;
+    }
+    >a{
+      color: $brand-green;
+    }
+  }
+}
+
+//index
+.pro-wrap{
+  display: block;
+  padding-left: 16px;
+  padding-top: $header-pt;
+  margin: 0 0 56px;
+  border-bottom: $border;
+  list-style: none;
+  background-color: #fff;
+
+  >li{
+    position: relative;
+    padding-left: 64px;
+    height: 80px;
+    border-top: $border;
+  }
+  >li:first-child{
+    border-top: none;
+  }
+  .pro-avatar{
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 54px;
+    height: 54px;
+
+    >img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .pro-info,
+  .pro-tag{
+    height: 100%;
+    float: left;
+    white-space:nowrap;
+  }
+  .pro-info{
+    width: 64%;
+    >h2{
+      color: $txt-black;
+      margin-top: 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 28px;
+      font-weight: 400;
+    }
+    >p{
+      margin: 0;
+      font-size: 13px;
+      color: $txt-gray;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .pro-tag{
+    padding-right: 10px;
+    width: 36%;
+    text-align: right;
+    >h2{
+      margin: 10px 0 0;
+      color: $brand-green;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    >p{
+      color: $txt-gray;
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
+
+//city&shop
+.city-wrap{
+  width: 100%;
+  padding-top: $header-pt;
+  text-align: center;
+  .city-list{
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    border-top: $border;
+    border-bottom: $border;
+    margin-top: 10px;
+
+    -webkit-box-align:center;
+    display: -webkit-box;
+
+    .city-name{
+      padding: 0;
+      color: $brand-green;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .city-shop{
+      color: $txt-gray;
+      font-size: 14px;
+      text-align: left;
+    }
+    .select-box{
+      height: 100%;
+      text-align: center;
+      font-size: 26px;
+
+      .icon-select{
+        display: block;
+        margin: 29px auto;
+        width: 24px;
+        height: 24px;
+        background-image: url("/dist/img/sprite-select.png");
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+    }
+
+    &:hover .icon-select,
+    &:active .icon-select{
+      background-position-y: -26px;
+    }
+
+    //shop-page
+    .shop-info{
+      text-align: left;
+
+      >h2{
+        font-size: 20px;
+        color: $brand-green;
+        margin-bottom: 4px;
+      }
+
+      >p{
+        margin: 0;
+        color: $txt-gray;
+        font-size: 14px;
+      }
+    }
+  }
+  .smile-tip{
+    margin-top: 30px;
+    width: 140px;
+  }
+  .city-tip{
+    font-size: 12px;
+    color: $txt-gray;
+  }
+  .wx-btn{
+    margin-top: 34px;
+  }
+}
+
+//pro-detail
+.pro-detail-wrap{
+  padding-top: $header-pt;
+
+  .part-1{
+    height: 195px;
+    background-color: #fff;
+    padding: 10px 16px;
+
+    .pro-cover{
+      width: 340px;
+      max-width: 100%;
+      height: 140px;
+      margin: 0 auto;
+      @include bg-cover;
+    }
+    .pro-title{
+      line-height: 45px;
+      overflow: hidden;
+      .name{
+        font-size: 14px;
+        color: $txt-black;
+      }
+      .price{
+        font-size: 20px;
+        color: $brand-green;
+        float: right;
+        font-weight: bold;
+      }
+    }
+  }
+  .part-2{
+    background-color: #fff;
+    margin-top: 10px;
+    border-top: $border;
+    border-bottom: $border;
+    .pro-info{
+      padding: 0;
+      background-color: #fff;
+      .pro-info-list{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 80px;
+        padding-left: 16px;
+
+        .spot{
+          display: block;
+          position: absolute;
+          left: 6px;
+          top:50%;
+          margin-top: -1px;
+          width: 4px;
+          height: 4px;
+          background-color: $brand-green;
+        }
+        .list-box{
+          height: 100%;
+          padding-right: 10px;
+          @include tx-center;
+          border-bottom: $border;
+          &:last-child{
+            border-bottom: none;
+          }
+          .list-name,
+          .list-info{
+            padding: 0;
+          }
+          .list-name{
+            padding-left: 4px;
+            font-size: 14px;
+            color: $brand-green;
+            font-weight: bold;
+            line-height: 18px;
+          }
+          .list-info{
+            font-size: 13px;
+            color: $txt-gray;
+          }
+        }
+      }
+    }
+  }
+
+  .part-3{
+    padding: 20px 0 10px;
+    @include border-tb;
+    background-color: #fff;
+    margin-top: 10px;
+    .sample-title{
+      padding-left: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      color: $brand-green;
+    }
+
+  }
+
+  .btn-box{
+    text-align: center;
+    .wx-btn{
+      margin: 30px auto;
+    }
+  }
+}
+
+//order
+.order-wrap{
+  padding-top: $header-pt;
+  padding-bottom: 50px;
+  min-height: 600px;
+  position: relative;
+  text-align: center;
+  .part-1{
+    height: 195px;
+    background-color: #fff;
+    padding: 10px 16px;
+    text-align: left;
+    .order-cover{
+      width: 340px;
+      max-width: 100%;
+      height: 140px;
+      margin: 0 auto;
+      @include bg-cover;
+    }
+    .order-title{
+      line-height: 45px;
+      overflow: hidden;
+      .status{
+        font-size: 14px;
+        float: right;
+      }
+      .price{
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &.unpaid{
+        .status,
+        .price{
+          color: $btn-red;
+        }
+      }
+      &.doing{
+        .status,
+        .price{
+          color: $brand-green;
+        }
+      }
+    }
+  }
+
+  //order-info
+  .order-info{
+    @include wx-block;
+    margin-top: 10px;
+    padding-left: 16px;
+    padding-top: 10px;
+    text-align: left;
+    >dl{
+      >dt{
+        color: $txt-gray;
+        font-size: 14px;
+        margin: 4px 0;
+        font-weight: 300;
+        >span{
+          color: $txt-black;
+          margin: 0 12px;
+        }
+      }
+    }
+  }
+
+  .btn-box{
+    margin-top: 50px;
+    text-align: center;
+    >p{
+      font-size: 14px;
+      color: $btn-red;
+      margin-bottom: 10px;
+    }
+
+    >.wx-btn-green{
+      margin-top: 30px;
+    }
+  }
+
+  //order
+  >.tip-logo{
+   margin-top: 180px;
+  }
+  .no-order{
+    margin-top: 120px;
+  }
+
+    //order-list
+  .order-list{
+    padding-bottom: 30px;
+    >li{
+      display: block;
+      margin-top: 10px;
+      min-height: 230px;
+      background-color: #fff;
+      @include border-tb;
+
+      .top-box{
+        height: 40px;
+        padding: 0 16px;
+        line-height: 40px;
+        .time{
+          font-size: 14px;
+          color: $txt-gray;
+          float: left;
+        }
+        .status{
+          font-size: 15px;
+          float: right;
+          &.done,
+          &.doing{
+            color: $brand-green;
+          }
+          &.unpaid{
+            color: $btn-red;
+          }
+          &.canceled{
+            color: $txt-gray;
+          }
+        }
+      }
+      .mid-box{
+        @include border-tb;
+        min-height: 130px;
+        padding: 20px 16px 20px 106px;
+        position: relative;
+        >img{
+          width: 90px;
+          height: 90px;
+          position: absolute;
+          left: 16px;
+        }
+        >dl{
+          padding: 0 10px;
+          text-align: left;
+          margin: 0;
+          >dt{
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 400;
+            color: $txt-gray;
+            >span{
+              color: $txt-black;
+              font-weight: 500;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      .bot-box{
+        height: 60px;
+        padding: 0 16px;
+        .price{
+          font-size: 22px;
+          font-weight: bold;
+          color: $txt-gray;
+          float: left;
+          line-height: 60px;
+        }
+        .wx-ghost-btn{
+          float: right;
+          margin-top: 13px;
+          margin-left: 10px;
+          &.ghost-btn-red{
+            color: #fff;
+            background-color: $btn-red;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+//order-status-wrap
+.order-status-wrap{
+  text-align: center;
+  position: relative;
+  //order status
+  .tip-logo{
+    margin-top: 150px;
+  }
+  .success-txt{
+    color: $brand-green;
+    font-size: 22px;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  .success-btn{
+    margin-top: 120px ;
+  }
+
+  .failed-txt,
+  .countdown-txt{
+    color:$btn-red;
+    font-size: 22px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  .countdown-txt{
+    margin-top: 15px;
+  }
+
+  .countdown-tip{
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .goon-btn{
+    margin-top: 35px;
+  }
+  .canceled-btn{
+    margin-top: 10px;
+  }
+}
+
+//order-info
+.order-info{
+  text-align: center;
+  .info-block{
+    position: relative;
+    min-height: 60px;
+    padding: 0 0 0 16px;
+    margin-top: 10px;
+    @include wx-block;
+    &:first-child{
+      text-align: left;
+      font-size: 15px;
+      padding-left: 52px;
+      border-top: none;
+      margin-top: 0;
+      color: $txt-black;
+      line-height: 60px;
+      .menu-left{
+        .price{
+          margin-left: 16px;
+        }
+      }
+    }
+    .menu-icon{
+      position: absolute;
+      left: 0;
+      top: 18px;
+      display: block;
+      width: 24px;
+      height: 25px;
+      @include bg-cover;
+      background-image: url("/dist/img/sprite-menu.png");
+
+      &.menu-icon-1{
+        left: 16px;
+        background-position-y: 0;
+      }
+      &.menu-icon-2{
+        background-position-y: -123px;
+      }
+      &.menu-icon-3{
+        background-position-y: -30px;
+      }
+      &.menu-icon-4{
+        background-position-y: -183px;
+      }
+      &.menu-icon-5{
+        background-position-y: -153px;
+      }
+      &.menu-icon-6{
+        background-position-y: -61px;
+      }
+      &.menu-icon-7{
+        background-position-y: -92px;
+      }
+      //@for $i from 0 to 7{
+      //  &.menu-icon-#{$i+1}{
+      //  background-position-y:-(($i * 31px)-1);
+      //  }
+      //}
+
+    }
+    .menu-list{
+      position: relative;
+      padding: 18px 16px 18px 36px;
+      @include border-b;
+      &:last-child{
+        border-bottom: none;
+      }
+      .menu-left,
+      .menu-right {
+        padding: 0;
+        font-size: 15px;
+      }
+      .menu-left{
+        text-align: left;
+        color: $txt-gray;
+      }
+      .menu-right{
+        text-align: right;
+        color: $txt-black;
+      }
+      .deposit{
+        color: $btn-red;
+      }
+
+      .phone{
+        position: absolute;
+        right: -16px;
+        top: -18px;
+        height: 60px;
+        outline: none;
+        text-align: right;
+        padding-right: 16px;
+      }
+      i{
+        margin-left: 10px;
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  >h2{
+    font-size: 14px;
+    color: $txt-gray;
+    margin-top: 15px;
+  }
+  >p{
+    font-size: 12px;
+    margin: 5px 0;
+  }
+  >.wx-btn{
+    margin-top: 20px;
+  }
+}

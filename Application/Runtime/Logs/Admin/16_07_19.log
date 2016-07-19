@@ -1,0 +1,14 @@
+[ 2016-07-19T16:27:47+08:00 ] ::1 /SmileTP/Admin/City/showOpenCity
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001134s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001193s ]
+SQL: SHOW COLUMNS FROM `city_stats` [ RunTime:0.0491s ]
+SQL: SELECT * FROM `city_stats` WHERE ( stats=1 )  [ RunTime:0.0053s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002063s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.008509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010815s ]
+
