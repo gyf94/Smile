@@ -14,7 +14,7 @@
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
 
-    <link href="/favicon.ico" rel="Shortcut  Icon" type="images/x-icon">
+    <link href="/SmileTP/Public/favicon.ico" rel="Shortcut  Icon" type="images/x-icon">
 
     <link rel="stylesheet" href="/SmileTP/Public/dist/css/amazeui.min.css">
     <link rel="stylesheet" href="/SmileTP/Public/dist/css/style.css">

@@ -21,4 +21,10 @@ class ShopController extends Controller {
         $shop=M("shop_stats")->where('id='.$shop_id)->Select();
         return json_encode($shop);
     }
+
+    public function shopInfoArr($shop_id)
+    {
+        $shop=M("shop_stats")->where('id='.$shop_id)->Select();
+        return $shop[0];
+    }
 }

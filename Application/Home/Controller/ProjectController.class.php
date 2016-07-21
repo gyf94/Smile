@@ -28,5 +28,16 @@ class ProjectController extends Controller {
         return json_encode($project);
     }
 
-    //根据project_id
+    public function projectInfoArr($project_id)
+    {
+        $project=M("project_stats")->where('id='.$project_id)->Select();
+        return $project[0];
+    }
+
+    //根据project_id返回项目的流程
+    public function projectStep($project_id)
+    {
+        $projectStep=M("project_info")->where('project_id='.$project_id)->Select();
+        return json_encode($projectStep);
+    }
 }

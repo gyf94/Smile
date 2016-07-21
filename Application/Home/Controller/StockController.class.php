@@ -13,12 +13,13 @@ class StockController extends Controller {
     {
         $stock=M('shop_time_table')->where('stats_date='.$stats_date.'and time='.$time)->Select();
         $remain=$stock[0]['stock']-$stock[0]['use'];
-        if($remain>0)
-        {
-            return true;
-        }else
-        {
-            return false;
-        }
+        return $remain;
+//        if($remain>0)
+//        {
+//            return true;
+//        }else
+//        {
+//            return false;
+//        }
     }
 }

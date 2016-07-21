@@ -21,4 +21,6 @@ class StockController extends Controller {
             return false;
         }
     }
+
+    //创建标准库存
 }

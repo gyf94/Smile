@@ -26,6 +26,8 @@ class OrderController extends Controller {
             //该城市仅一家店铺
 
             //该城市多家开发店铺
+
+            return true;
         }else{
             //有待支付订单，返回该订单id
             echo $order[0]['id'];
@@ -60,7 +62,7 @@ class OrderController extends Controller {
         echo "插入成功";
     }
 
-    //超时取消
+    //支付前判断有没有超时，超时取消
     public function timeout($order_id)
     {
         //判断现在的时间有没有超过15分钟
@@ -92,6 +94,19 @@ class OrderController extends Controller {
         return true;//表示正常下单
     }
 
+    //支付成功，将订单状态改为进行中
+    public function paySuccess($order_id)
+    {
+        //应该可以收到一个支付成功的信号
+        //更改订单的状态
+        $order=M("order_stats");
+        $order->stats=2;
+        $order->m_time=date('y-m-d h:i:s',time());
+        $order->where('id='.$order_id)->save();
+        echo "用户支付成功，订单进行中";
+        return true;
+    }
+
     //用户前台“我的订单”
     //根据user_id查询用户全部订单
     public function showOrder()
@@ -99,6 +114,24 @@ class OrderController extends Controller {
 //        $user_id=session('user_id');
         $user_id=1;
         $order=M("order_stats")->where('user_id='.$user_id)->Select();
-        return json_encode($order);
+
+        $tempOrder=array();
+        foreach($order as $subOrder)
+        {
+            $shopInfo=R('Shop/shopInfoArr/',array($subOrder['shop_id']));
+            $projectInfo=R('Project/projectInfoArr/',array($subOrder['project_id']));
+
+            $shop_name=$shopInfo['shop_name'];
+            $address=$shopInfo['address'];
+            $project_name=$projectInfo['project_name'];
+
+            $newOrderInfo=compact("shop_name","address","project_name");
+
+            $temp=array_merge($subOrder,$newOrderInfo);
+
+            array_push($tempOrder,$temp);
+        }
+        echo dump($tempOrder);
+        return json_encode($tempOrder);
     }
 }
