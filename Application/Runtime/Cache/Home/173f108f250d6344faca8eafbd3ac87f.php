@@ -1,0 +1,84 @@
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>微笑时刻</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link href="/favicon.ico" rel="Shortcut  Icon" type="images/x-icon">
+
+    <link rel="stylesheet" href="/SmileTP/Public/dist/css/amazeui.min.css">
+    <link rel="stylesheet" href="/SmileTP/Public/dist/css/style.css">
+</head>
+<body>
+<!--以上为公共引入--
+
+<!--page content-->
+<section class="order-info">
+    <div class="info-block">
+        <span class="menu-icon menu-icon-1"></span>
+        <div class="menu-left">证件照<span class="price">78</span>元</div>
+    </div>
+
+    <div class="info-block">
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-2"></span>
+            <div class="am-u-sm-4 menu-left">门店名称</div>
+            <div class="am-u-sm-8 menu-right">五道口店<i class="am-icon-angle-right"></i> </div>
+        </div>
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-3"></span>
+            <div class="am-u-sm-4 menu-left">服务地址</div>
+            <div class="am-u-sm-8 menu-right">海淀区五道口华清商务会馆601室近五道口地铁站</div>
+        </div>
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-4"></span>
+            <div class="am-u-sm-4 menu-left">预约时间</div>
+            <div class="am-u-sm-8 menu-right">2016年7月4日 16:40<i class="am-icon-angle-right"></i></div>
+        </div>
+    </div>
+
+    <div class="info-block">
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-5"></span>
+            <div class="am-u-sm-4 menu-left">预约电话</div>
+            <div class="am-u-sm-8 menu-right"><input type="text" placeholder="请输入电话号码" class="phone"></div>
+        </div>
+    </div>
+
+    <div class="info-block">
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-6"></span>
+            <div class="am-u-sm-4 menu-left">支付方式</div>
+            <div class="am-u-sm-8 menu-right">暂时只支持到店支付</div>
+        </div>
+        <div class="menu-list am-g">
+            <span class="menu-icon menu-icon-7"></span>
+            <div class="am-u-sm-4 menu-left">预付订金</div>
+            <div class="am-u-sm-8 menu-right deposit">10元</div>
+        </div>
+    </div>
+
+    <h2>到店支付余额将<span class="txt-green">退还押金</span> </h2>
+    <p>当前门店:五道口店</p>
+    <button class="am-btn wx-btn wx-btn-green">确认</button>
+</section>
+<!--page content end-->
+
+<!--common js-->
+<script src="/SmileTP/Public/dist/js/jquery.min.js"></script>
+<script src="/SmileTP/Public/dist/js/amazeui.min.js"></script>
+
+<!--private js-->
+
+</body>
+</html>

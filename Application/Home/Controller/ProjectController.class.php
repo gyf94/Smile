@@ -8,11 +8,6 @@
 namespace Home\Controller;
 use Think\Controller;
 class ProjectController extends Controller {
-    public function pro_detail()
-    {
-        $this->display();
-    }
-
     //显示一个城市的所有项目
     public function showProject($city_id)
     {
@@ -32,4 +27,6 @@ class ProjectController extends Controller {
         $project=M("project_stats")->where('id='.$project_id)->Select();
         return json_encode($project);
     }
+
+    //根据project_id
 }

@@ -16,3 +16,9 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000080s ]
 INFO: [ app_init ] --END-- [ RunTime:0.002067s ]
 ERR: 无法加载模块:City
 
+[ 2016-07-19T22:01:07+08:00 ] ::1 /SmileTP/Project/pro_detail.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001513s ]
+ERR: 无法加载模块:Project
+

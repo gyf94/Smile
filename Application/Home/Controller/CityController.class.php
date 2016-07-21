@@ -8,13 +8,15 @@
 namespace Home\Controller;
 use Think\Controller;
 class CityController extends Controller {
+
     //显示所有开放城市
-   public function showOpenCity()
-   {
-       $city = M("city_stats")->where('stats=1')->Select();
-       $this->assign('city',$city);
-       $this->display();
-   }
+    public function showOpencity()
+    {
+        $city = M("city_stats")->where('stats=1')->Select();
+        $json=json_encode($city);
+        echo $json;
+        return $json;
+    }
 
     /* 根据城市名称查询该城市是否开放
      * 开放，在user_profile中更改city_id，返回city_id

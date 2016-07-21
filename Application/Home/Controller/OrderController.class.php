@@ -12,34 +12,7 @@ class OrderController extends Controller {
      * 订单状态stats：
      * 1.待支付 2.进行中 3.超时取消 4.用户取消 5.后台取消 6.已完成
      */
-    public function order()
-    {
-        $this->display();
-    }
-    public function order_doing()
-    {
-        $this->display();
-    }
 
-    public function order_failed()
-    {
-        $this->display();
-    }
-
-    public function order_info()
-    {
-        $this->display();
-    }
-
-    public function order_success()
-    {
-        $this->display();
-    }
-
-    public function order_unpaid()
-    {
-        $this->display();
-    }
     //项目类型1，点击立即预约,检查是否有待支付状态订单
     public function checkOrderStats()
     {

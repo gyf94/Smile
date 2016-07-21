@@ -1,0 +1,14 @@
+[ 2016-07-20T15:56:01+08:00 ] ::1 /SmileTP/Admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001082s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004277s ]
+SQL: SHOW COLUMNS FROM `city_stats` [ RunTime:0.0594s ]
+SQL: SELECT * FROM `city_stats`  [ RunTime:0.0056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002952s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.010853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014179s ]
+
